@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<font style="position: absolute; left: 85px;">Time |</font><font style="position: absolute; left: 130px;"> Kill</font><font style="position: absolute; left: 255px;">Time |</font><font style="position: absolute; left: 305px;"> Kill</font>
+
+<br>
+{% for post in posts %}
+    {% if post.team|stringformat:"s" != "Virtus.pro" %}
+        <div style="position: relative; left:175px;">
+        {{ post.team }}
+        {{ post.time_map }}
+        {{ post.kill_map }}
+        </div>
+
+    {% elif post.team|stringformat:"s" != "Evil Geniuses" %}
+        <div style="position: relative;left:30px;">
+        {{ post.team }}
+        {{ post.time_map }}
+        {{ post.kill_map }}
+    </div>
+    {% endif %}
+{% endfor %}
+</body>
+</html>
